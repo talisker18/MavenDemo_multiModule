@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>MavenDemo_multiModule</groupId>
+  <artifactId>MavenDemo_multiModule</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>childModule1</module>
+  	<module>childModule2</module>
+  </modules>
+  
+  <!-- instead of defining dependencies versions in each child module, do dependency management in parent project -->
+  <dependencyManagement>
+  	<dependencies>
+  		<!-- add the dependencies here again with version and leave the version out in the child modules -->
+  		<dependency>
+	  		<groupId>org.hibernate</groupId>
+	   		<artifactId>hibernate-core</artifactId>
+	   		<version>5.0.6.Final</version>
+  		</dependency>
+  		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-core</artifactId>
+		    <version>5.3.12</version>
+		</dependency>
+  	</dependencies>
+  </dependencyManagement>
+  
+</project>

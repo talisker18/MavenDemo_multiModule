@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>MavenDemo_multiModule</groupId>
+    <artifactId>MavenDemo_multiModule</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>childModule1</artifactId>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.hibernate</groupId>
+   		<artifactId>hibernate-core</artifactId>
+  	</dependency>
+  	<!-- we cann add other module as dependency here
+  	
+  	we can use a build in variable for the version (gets the version of that module)
+  	
+  	then we will see the jar, as usual, in the Maven Dependencies folder
+  	
+  	 -->
+  	<dependency>
+  		<groupId>MavenDemo_multiModule</groupId>
+   		<artifactId>childModule2</artifactId>
+   		<version>${project.version}</version>
+  	</dependency>
+  </dependencies>
+  
+</project>
